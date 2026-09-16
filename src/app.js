@@ -1117,6 +1117,8 @@
     /* Los videos de los emprendimientos: se cargan y arrancan al verse, se frenan al irse. */
     (function () {
       var vs = document.querySelectorAll("video[data-src]"); if (!vs.length || !("IntersectionObserver" in window)) return;
+      /* Con el ahorro de datos prendido no se baja ningún video: queda el póster. */
+      if (navigator.connection && navigator.connection.saveData) return;
       var sinMov = matchMedia("(prefers-reduced-motion:reduce)").matches;
       var ov = new IntersectionObserver(function (es) {
         es.forEach(function (e) {

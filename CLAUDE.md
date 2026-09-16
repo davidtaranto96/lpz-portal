@@ -51,12 +51,22 @@ David: que se parezcan pero no sean iguales, para que no se confunda la gente ni
 - **Tipografía**: Besley (títulos, una Clarendon sólida como las letras del logo) y Hanken Grotesk
   (texto). Fran usa Libre Caslon Text y Archivo. Besley es más ancha: «OPORTUNIDADES» en el celular
   toma el cuerpo del ancho disponible.
-- **Portada más baja, con Salta de noche**: 60svh en escritorio y 52svh en el celular, **para que
-  las propiedades asomen apenas se abre la página** (lo pidió Luis). La foto es de Heather Emond,
-  CC0 (Unsplash, vía Wikimedia Commons, `File:Salta_-_noche.jpg`): las luces de la ciudad desde el
-  San Bernardo con un rayo. Dos recortes: `img/portada-salta.webp` (escritorio, sin la torre del
-  teleférico) y `-movil.webp`. La foto se acerca muy despacio (`@keyframes deriva`, 40 s, se apaga
-  con `prefers-reduced-motion`).
+- **Portada más baja, con una casa en video**: 60svh en escritorio y 52svh en el celular, **para que
+  las propiedades asomen apenas se abre la página** (lo pidió Luis). El video es una casa quinta con
+  pileta vista desde un dron: los portales grandes venden una casa (Toribio Achával pone un video de
+  una propiedad, Compass una casa con las luces prendidas) y los de Salta, un paisaje con el
+  buscador (NMS, Zumar, LV y Carina Nuñez usan la misma plantilla). David aceptó que sea genérico
+  si es bueno.
+  - Fuente: Coverr, «House on a hill in Alentejo, Portugal», licencia de Coverr (uso comercial,
+    sin atribución). **Mixkit se descartó**: sus tomas de casas buenas tienen la licencia
+    restringida, que no permite uso comercial.
+  - Se usan los primeros 3 s (después el dron se va al valle y aparece una persona), desacelerados
+    1,5 veces con `minterpolate` y en ida y vuelta, así el loop no salta: 8,9 s.
+  - Dos cortes: `video/portada-casa.mp4` (1600×720, 1,6 MB) y `video/portada-casa-movil.mp4`
+    (648×720, 0,8 MB), con sus pósters `img/portada-casa*.webp`. Los carga el cargador de videos
+    de `app.js` (el mismo de Aires) recién cuando se ven; el del otro ancho está oculto y no se baja.
+    Con `prefers-reduced-motion` o ahorro de datos queda el póster.
+  - El velo oscurece arriba y al centro y deja los bordes claros: el video es de día.
 - **Aires es una tarjeta aparte**, con bordes redondeados y margen, y la hoja de contacto ya no la
   tapa al bajar (en el de Fran se apilan).
 - Todo eso vive en el bloque «LPZ Propiedades: lo que lo separa del portal de Fran», al final del

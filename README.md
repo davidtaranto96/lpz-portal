@@ -24,5 +24,5 @@ GitHub Pages desde `main`. `git push` es el deploy.
 
 ## Créditos
 
-La foto de portada (`img/portada-salta*.webp`) es «Salta - noche», de Heather Emond, publicada en
-Unsplash y en Wikimedia Commons con licencia CC0: no requiere atribución. Se anota igual.
+El video de portada (`video/portada-casa*.mp4`) sale de Coverr, «House on a hill in Alentejo,
+Portugal», con la licencia de Coverr: uso comercial libre, sin atribución. Se anota igual.
