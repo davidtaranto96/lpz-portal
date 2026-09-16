@@ -1315,6 +1315,20 @@
     .filtros-btn{border-radius:10px!important}
     .selector--chico{border-radius:10px}
   }
+  /* El cierre de Luis: bloque naranja de la marca, texto carbón (5:1 de contraste), botón principal
+     carbón y WhatsApp en blanco. El pie lleva una línea naranja arriba. */
+  .cierre--lpz .cierre__caja{background:var(--naranja);box-shadow:0 30px 70px rgba(240,115,24,.28);border-radius:22px;border:none;padding:clamp(30px,4.5vw,64px) clamp(24px,4.5vw,64px)}
+  .cierre--lpz h2{margin:0 0 12px;color:var(--tinta);font-size:clamp(26px,3.2vw,42px);max-width:18ch}
+  .cierre--lpz p{color:var(--verde);font-size:16.5px;max-width:44ch}
+  .cierre--lpz .cierre__btn{background:var(--verde);color:#fff;border-radius:10px;box-shadow:none}
+  .cierre--lpz .cierre__btn:hover{background:var(--verde-noche);color:#fff}
+  .cierre--lpz .cierre__btn--wa{background:#fff;color:var(--tinta)}
+  .cierre--lpz .cierre__btn--wa svg{color:#1FA855}
+  .cierre--lpz .cierre__btn--wa:hover{background:#fff;color:var(--tinta);filter:none;box-shadow:0 10px 24px rgba(27,25,23,.18)}
+  .cierre--lpz .cierre__link{color:var(--tinta);text-decoration:underline;text-underline-offset:3px}
+  .cierre--lpz .cierre__link:hover{color:var(--verde-noche)}
+  footer[data-screen-label="Pie"]{border-top:3px solid var(--naranja)}
+  @media (max-width:899px){.cierre--lpz .cierre__caja{padding:28px 22px 24px;border-radius:18px}.cierre--lpz h2{font-size:26px}.cierre--lpz p{font-size:15px}}
 </style>
 
 <title>Luis López — Real Estate · Salta</title>
@@ -1369,7 +1383,7 @@
     document.head.appendChild(cf);
   }
 </script>
-<link rel="stylesheet" href="src/estilos.css?v=20260916e">
+<link rel="stylesheet" href="src/estilos.css?v=20260916f">
 </head>
 <body>
 
@@ -1733,17 +1747,18 @@
 </section>
 
 <!-- ══ CIERRE DEL INICIO: la invitación a escribir (contacto y preguntas viven en sus ventanas) ══ -->
-<section id="escribinos" data-screen-label="Escribinos" class="cierre">
+<section id="escribinos" data-screen-label="Escribinos" class="cierre cierre--lpz">
+  <!-- Portal de Luis (16/9): el cierre es un bloque naranja de la marca con texto carbón, y no la
+       tarjeta oscura del portal de Fran. Los botones van en infinitivo. -->
   <div class="cierre__caja">
-    <div>
-      <span class="etiqueta-seccion etiqueta-seccion--clara">Hablemos</span>
-      <h2>Contanos qué buscás. Si no lo tenemos, lo buscamos por vos.</h2>
-      <p>Una persona te contesta, no un bot. Las consultas entran al sistema y te respondemos al momento.</p>
+    <div class="cierre__texto">
+      <h2>¿Buscás algo que no está publicado?</h2>
+      <p>Contanos qué necesitás y te respondemos en persona. Si no está en la cartera, lo buscamos.</p>
     </div>
     <div class="cierre__botones">
-      <a href="#contacto" class="cierre__btn btn-anim brilla">Escribinos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-      <a href="https://wa.me/5493875030113?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener" class="cierre__btn cierre__btn--wa btn-anim brilla"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg>WhatsApp</a>
-      <a href="#preguntas" class="cierre__link">Preguntas frecuentes →</a>
+      <a href="#contacto" class="cierre__btn btn-anim">Hacer una consulta<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      <a href="https://wa.me/5493875030113?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener" class="cierre__btn cierre__btn--wa btn-anim"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg>Escribir por WhatsApp</a>
+      <a href="#preguntas" class="cierre__link">Ver las preguntas frecuentes</a>
     </div>
   </div>
 </section>

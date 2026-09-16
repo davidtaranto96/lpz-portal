@@ -75,6 +75,9 @@ David: que se parezcan pero no sean iguales, para que no se confunda la gente ni
 - **Texto de la portada**: «Tu próxima propiedad en Salta» y «Casas, terrenos y alquileres ·
   Corredor matriculado CUCIS 251» (en el celular, en dos líneas sin el punto). Los botones son menos
   redondeados que las píldoras de Fran, y el de la barra dice «Buscar propiedades».
+- **Cierre naranja** (16/9): «¿Buscás algo que no está publicado?» en un bloque naranja de la marca
+  con texto carbón, botones «Hacer una consulta» (carbón) y «Escribir por WhatsApp» (blanco). En el
+  de Fran es una tarjeta oscura con «Escribinos». El pie lleva una línea naranja arriba.
 - **Aires es una tarjeta aparte**, con bordes redondeados y margen, y la hoja de contacto ya no la
   tapa al bajar (en el de Fran se apilan).
 - Todo eso vive en el bloque «LPZ Propiedades: lo que lo separa del portal de Fran», al final del
