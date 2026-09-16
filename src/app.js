@@ -38,7 +38,7 @@
   var CFG = window.MOLINS_CFG || {};
   var API = CFG.API;
   var CARTERA = CFG.CARTERA;
-  var TEL = "5493874153669";
+  var TEL = "5493875030113";
 
   var TIPO_LEGIBLE = { CASA: "Casa", DEPARTAMENTO: "Departamento", DUPLEX: "Dúplex", TERRENO: "Terreno", LOCAL: "Local comercial", OFICINA: "Oficina", GALPON: "Galpón", FINCA: "Finca", COCHERA: "Cochera", OTRO: "Propiedad" };
   var ZONA_DE_BARRIO = { "Grand Bourg": "Grand Bourg", "Tres Cerritos": "Tres Cerritos", "Centro": "Centro", "El Encón": "El Encón · Rosario de Lerma", "Rosario de Lerma": "El Encón · Rosario de Lerma", "San Lorenzo": "San Lorenzo", "Villa San Lorenzo": "San Lorenzo", "San Lorenzo Chico": "San Lorenzo", "Vaqueros": "Vaqueros", "La Caldera": "Vaqueros", "Cerrillos": "Cerrillos", "Chicoana": "Chicoana", "El Portezuelo": "El Portezuelo", "San Antonio": "San Antonio" };
@@ -239,7 +239,7 @@
     function traer(slug) {
       return fetch(API + "/api/publico/propiedades?cartera=" + slug).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) { return j && j.propiedades ? j.propiedades : null; }).catch(function () { return null; });
     }
-    traer("torre").then(function (u) {
+    (document.querySelector(".bloque--torre") ? traer("torre") : Promise.resolve(null)).then(function (u) {
       if (!u || !u.length) return;
       var libres = u.filter(function (x) { return x.estado === "ACTIVA"; });
       var precios = libres.map(function (x) { return x.precio; }).filter(function (n) { return n > 0; });
@@ -291,8 +291,8 @@
     try {
       var base = location.origin + location.pathname;
       var agente = {
-        "@context": "https://schema.org", "@type": "RealEstateAgent", "name": "Molins Negocios Inmobiliarios",
-        "url": base, "telephone": "+54 387 415 3669",
+        "@context": "https://schema.org", "@type": "RealEstateAgent", "name": "LPZ Propiedades",
+        "url": base, "telephone": "+54 387 503 0113",
         "address": { "@type": "PostalAddress", "streetAddress": "20 de Febrero 1705, Of. 7", "addressLocality": "Salta", "addressCountry": "AR" },
         "areaServed": "Salta, Argentina"
       };
@@ -890,7 +890,7 @@
       escribirWa: function (ev) { S.formWa = ev.target.value; pintarSuave(); },
       escribirMail: function (ev) { S.formMail = ev.target.value; pintarSuave(); },
       escribirBusca: function (ev) { set({ formBusca: ev.target.value }); },
-      buscaOpciones: [["Para vivir", "casa"], ["Para invertir", "inversion"], ["Alquilar", "llave"], ["Un terreno", "terreno"], ["Aires de San Lorenzo", "aires"], ["Edificio La Torre", "torre"], ["Vender mi propiedad", "vender"], ["Todavía estoy viendo", "ojo"]].map(function (o) {
+      buscaOpciones: [["Para vivir", "casa"], ["Para invertir", "inversion"], ["Alquilar", "llave"], ["Un terreno", "terreno"], ["Aires de San Lorenzo", "aires"], ["Vender mi propiedad", "vender"], ["Todavía estoy viendo", "ojo"]].map(function (o) {
         var t = o[0];
         return { t: t, ico: o[1], activa: S.formBusca === t ? "true" : "false", clase: "chip-busca" + (S.formBusca === t ? " es-activa" : ""), elegir: function () { set({ formBusca: t }); } };
       }),
@@ -953,7 +953,7 @@
     { n: "02", q: "¿Cuánto se paga de seña y qué pasa si me arrepiento?", a: "La reserva es un porcentaje chico del precio y se firma un recibo con plazo. Si el propietario no acepta la oferta, se devuelve. Si el que se arrepiente es el comprador, la seña se pierde. Todo queda por escrito antes de pagar." },
     { n: "03", q: "¿Quién paga los honorarios del corredor?", a: "En una venta, cada parte paga los honorarios de su corredor. El porcentaje se acuerda antes y figura en la autorización y en el boleto. No hay sorpresas al final." },
     { n: "04", q: "¿Qué es el informe de dominio y por qué importa?", a: "Es el certificado del Registro de la Propiedad que dice quién es el dueño y si hay hipotecas, embargos o inhibiciones. Se pide antes del boleto. Una propiedad sin informe no se firma." },
-    { n: "05", q: "¿Puedo pagar en cuotas?", a: "En terrenos, en Aires de San Lorenzo y en La Torre, sí: anticipo y cuotas, con el detalle de cada plan en la consulta. En casas y departamentos de la cartera depende del propietario, y lo averiguamos antes de la visita." },
+    { n: "05", q: "¿Puedo pagar en cuotas?", a: "En terrenos y en Aires de San Lorenzo, sí: anticipo y cuotas, con el detalle de cada plan en la consulta. En casas y departamentos de la cartera depende del propietario, y lo averiguamos antes de la visita." },
     { n: "06", q: "¿Cuánto tarda una escritura?", a: "Entre el boleto y la escritura pasan normalmente de 30 a 60 días: el escribano pide los certificados, se liquidan los impuestos y se coordina la firma. Con hipoteca bancaria, algo más." },
     { n: "07", q: "¿Por qué algunas fichas no muestran la dirección exacta?", a: "Por pedido del propietario. La ficha muestra el barrio y la zona; la dirección se pasa al coordinar la visita." },
     { n: "08", q: "Quiero vender o alquilar mi propiedad. ¿Cómo empiezo?", a: "Escribinos y coordinamos una tasación sin cargo. Después se firma la autorización de venta o de alquiler, se toman las fotos y la propiedad sale publicada acá y en los portales, con las consultas entrando al mismo sistema que ves en este sitio." }
@@ -1263,7 +1263,9 @@
            el de abajo se encoge y se oscurece. Vale en todos los anchos: en el celular el
            bloque es más alto que la pantalla, así que se mide contra lo que se ve de él. */
         /* Aires va primero (Fran, 10/9): La Torre se apila sobre Aires. */
-        [[editorialEl, airesEl], [airesEl, torreEl], [torreEl, cierreEl]].forEach(function (par) {
+        /* Sin La Torre (el portal de Luis) la hoja de contacto tapa directo a Aires. */
+        var capas = [editorialEl, airesEl, torreEl, cierreEl].filter(Boolean);
+        capas.slice(1).map(function (el, i) { return [capas[i], el]; }).forEach(function (par) {
           var abajo = par[0], arriba = par[1]; if (!abajo || !arriba) return;
           var ra = arriba.getBoundingClientRect(), rb = abajo.getBoundingClientRect();
           var visto = Math.max(1, Math.min(rb.height, innerHeight));

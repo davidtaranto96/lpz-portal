@@ -340,6 +340,8 @@
   .barra__lpz img{height:44px;width:auto;display:block;transition:filter .35s}
   .barra:not(.es-solida) .barra__lpz img{filter:brightness(0) invert(1);opacity:.95}
   .barra__lpz:hover{opacity:.85}
+  /* El socio de Luis es Fran: su escudo va a color, sin el blanco que lleva el logo de Grupo LPZ en el portal de Fran. */
+  .barra__lpz--socio img,.barra:not(.es-solida) .barra__lpz--socio img{filter:none;opacity:1}
   @media (min-width:900px){.barra.es-arriba .barra__lpz{transform:translate(-8px,30px) scale(1.55)}}
   @media (max-width:899px){.barra__lpz img{height:40px}.barra__lpz{margin-right:2px}}
   .barra__linea{width:23px;height:2px;background:#fff;border-radius:2px;display:block;transition:background .3s}
@@ -780,6 +782,7 @@
   .pie__lpz{display:inline-flex;align-items:center;gap:12px;color:rgba(255,255,255,.75)}
   .pie__lpz span{text-align:right;line-height:1.35}.pie__lpz small{font-size:11.5px;color:rgba(255,255,255,.55)}
   .pie__lpz img{height:58px;width:auto;opacity:.92;filter:brightness(0) invert(1)}
+  .pie__lpz--socio img{filter:none;opacity:1}
   /* El menú del celular */
   .menu{position:fixed;inset:0;z-index:300;background:var(--hueso);display:flex;flex-direction:column;padding:14px 20px 20px;animation:fadein .2s ease both;overflow-y:auto}
   .menu__cab{display:flex;align-items:center;justify-content:space-between}
@@ -1240,11 +1243,11 @@
   }
 </style>
 
-<title>Francisco Molins — Real Estate · Salta</title>
-<meta name="description" content="Casas, departamentos, locales, oficinas y terrenos en Salta. Cartera propia de Francisco Molins, corredor inmobiliario matriculado CUCIS 251. Grupo LPZ-Molins." />
+<title>Luis López — Real Estate · Salta</title>
+<meta name="description" content="Casas, departamentos, locales, oficinas y terrenos en Salta. Cartera propia de Luis López, corredor inmobiliario matriculado CUCIS 251. Grupo LPZ-Molins." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232E2C28'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23F37A1F'%3EL%3C/text%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Francisco Molins — Real Estate · Salta" />
+<meta property="og:title" content="Luis López — Real Estate · Salta" />
 <meta property="og:description" content="Casas, departamentos, locales y terrenos en Salta. Cartera propia, atendida por un corredor matriculado." />
 <meta property="og:image" content="https://davidtaranto96.github.io/lpz-portal/img/og-lpz.jpg?v=1" />
 <meta property="og:image:width" content="1200" />
@@ -1302,13 +1305,12 @@
 <!-- NAV : el logo manda -->
 <header class="barra">
   <div style="max-width:1400px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px">
-    <!-- Pedido de Fran (5/9, por audio): sobre la portada la marca grande dice «Francisco
-         Molins · Real estate · Salta»; al bajar queda sólo el escudo. El menú al centro y el
-         logo de Grupo LPZ (Luis) a la derecha, grande en la portada y chico al bajar, como
-         el escudo. Aplicado el 8/9. -->
-    <a href="#inicio" aria-label="Francisco Molins, inicio" class="marca" style="flex:0 0 auto">
+    <!-- Espejo del portal de Fran (16/9): acá la marca grande es «Luis López · Real estate ·
+         Salta» con el escudo de LPZ, y a la derecha va el escudo de Molins (Fran), que lleva a
+         su WhatsApp. En el de Fran es al revés: su escudo a la izquierda y Grupo LPZ a la derecha. -->
+    <a href="#inicio" aria-label="Luis López, inicio" class="marca" style="flex:0 0 auto">
       <img src="img/escudo-lpz.png" alt="LPZ Propiedades" width="40" height="40" />
-      <span><b>Francisco Molins</b><small>Real estate · Salta</small></span>
+      <span><b>Luis López</b><small>Real estate · Salta</small></span>
     </a>
     <div data-si="noEsMovil" hidden style="flex:1 1 auto;display:flex;align-items:center;justify-content:center;gap:22px">
       <nav class="barra__nav">
@@ -1318,8 +1320,7 @@
           <div class="barra__menu"><div class="barra__menu-caja">
             <!-- Aires siempre primero (Fran, 10/9), y cada uno con su logo. -->
             <a class="barra__menu-item" href="https://airesdesanlorenzo.com/" target="_blank" rel="noopener"><img src="img/aires-laguna.webp" alt="" loading="lazy" /><span><b class="logo-proy logo-proy--aires"><img src="img/logo-aires-verde.webp" alt="Aires de San Lorenzo" width="576" height="87" loading="lazy" /></b><small>Dúplex, oficinas y locales · airesdesanlorenzo.com</small></span><i>↗</i></a>
-            <a class="barra__menu-item" href="https://edificiolatorre.com/" target="_blank" rel="noopener"><img src="img/torre-frente.webp" alt="" loading="lazy" /><span><b class="logo-proy logo-proy--torre" role="img" aria-label="La Torre"></b><small>Doce unidades en el centro · edificiolatorre.com</small></span><i>↗</i></a>
-            <a class="barra__menu-todo" href="#proyectos">Ver los dos en el portal →</a>
+            <a class="barra__menu-todo" href="#proyectos">Verlo en el portal →</a>
           </div></div>
         </span>
         <a href="#preguntas">Preguntas</a>
@@ -1327,7 +1328,7 @@
       </nav>
     </div>
     <div style="flex:0 0 auto;display:flex;align-items:center;gap:6px">
-      <a href="https://wa.me/5493875030113" target="_blank" rel="noopener" class="barra__lpz" aria-label="Grupo LPZ, Luis López, por WhatsApp"><img src="img/logo-lpz.png" alt="Grupo LPZ" width="731" height="900" /></a>
+      <a href="https://wa.me/5493874153669" target="_blank" rel="noopener" class="barra__lpz barra__lpz--socio" aria-label="Francisco Molins, por WhatsApp"><img src="img/escudo-molins.png" alt="Molins Negocios Inmobiliarios" width="298" height="381" /></a>
     <div data-si="esMovil" hidden>
       <button data-click="alternarMenu" class="barra__hamb" data-attr-aria-expanded="menuAria" aria-label="Abrir o cerrar el menú" style="background:none;border:none;cursor:pointer;padding:10px;display:flex;flex-direction:column;gap:5px">
         <span class="barra__linea"></span>
@@ -1343,7 +1344,7 @@
   <div class="menu-velo" data-attr-class="menuVelo" data-click="cerrarMenu" aria-hidden="true"></div>
   <div class="menu" data-attr-class="menuClase" data-attr-aria-hidden="menuCerradoAria">
     <div class="menu__cab">
-      <div class="menu__marca"><img loading="lazy" src="img/escudo-lpz.png" alt="" /><b>Francisco Molins</b></div>
+      <div class="menu__marca"><img loading="lazy" src="img/escudo-lpz.png" alt="" /><b>Luis López</b></div>
     </div>
     <nav class="menu__nav">
       <a class="menu__item" href="#propiedades" data-click="cerrarMenu" style="--i:0">Propiedades<i class="menu__chev menu__chev--ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></a>
@@ -1351,8 +1352,7 @@
       <div data-si="menuProy" hidden>
         <div class="menu__sub">
           <a class="menu__proy" href="https://airesdesanlorenzo.com/" target="_blank" rel="noopener"><img src="img/aires-laguna.webp" alt="" loading="lazy" /><span><b class="logo-proy logo-proy--aires"><img src="img/logo-aires-verde.webp" alt="Aires de San Lorenzo" width="576" height="87" loading="lazy" /></b><small>Dúplex, oficinas y locales, Etapa 1</small></span><i>↗</i></a>
-          <a class="menu__proy" href="https://edificiolatorre.com/" target="_blank" rel="noopener"><img src="img/torre-frente.webp" alt="" loading="lazy" /><span><b class="logo-proy logo-proy--torre" role="img" aria-label="La Torre"></b><small>Doce unidades en el centro de Salta</small></span><i>↗</i></a>
-          <a class="menu__proy-todo" href="#proyectos" data-click="cerrarMenu">Ver los dos en el portal →</a>
+          <a class="menu__proy-todo" href="#proyectos" data-click="cerrarMenu">Verlo en el portal →</a>
         </div>
       </div>
       <a class="menu__item" href="#preguntas" data-click="cerrarMenu" style="--i:2">Preguntas<i class="menu__chev menu__chev--ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></a>
@@ -1360,7 +1360,7 @@
     </nav>
     <div class="menu__pie">
       <button type="button" class="menu__buscar brilla" data-click="abrirBuscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>Buscar entre todas las propiedades</button>
-      <a class="menu__wa" href="https://wa.me/5493874153669?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg><span>WhatsApp · 387 415 3669</span></a>
+      <a class="menu__wa" href="https://wa.me/5493875030113?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg><span>WhatsApp · 387 503 0113</span></a>
       <span class="menu__nota">20 de Febrero 1705, Of. 7 — Salta<br />CUCIS 251 · Grupo LPZ-Molins</span>
     </div>
   </div>
@@ -1423,7 +1423,7 @@
       <div style="display:flex;align-items:center;gap:20px;animation:rise .7s cubic-bezier(.22,.61,.36,1) both">
         <img loading="lazy" src="img/escudo-lpz.png" alt="LPZ Propiedades" style="width:clamp(72px,9vw,104px);height:clamp(72px,9vw,104px);border-radius:16px;object-fit:cover;box-shadow:0 16px 40px rgba(0,0,0,.35)" />
         <div>
-          <h1 style="margin:0;font-family:'Libre Caslon Text',Georgia,serif;font-weight:700;font-size:clamp(30px,4.4vw,54px);line-height:1.02;letter-spacing:.01em;color:#fff">Francisco Molins</h1>
+          <h1 style="margin:0;font-family:'Libre Caslon Text',Georgia,serif;font-weight:700;font-size:clamp(30px,4.4vw,54px);line-height:1.02;letter-spacing:.01em;color:#fff">Luis López</h1>
           <p style="margin:8px 0 0;font-size:clamp(11px,1.3vw,14px);font-weight:600;letter-spacing:.24em;color:rgba(255,255,255,.8)">REAL ESTATE · SALTA</p>
         </div>
       </div>
@@ -1449,7 +1449,7 @@
       </div>
     </div>
     <div style="position:relative;min-height:380px">
-      <img loading="lazy" src="img/hero-MOL-213170.jpg" alt="Propiedad de la cartera de Molins" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+      <img loading="lazy" src="img/hero-MOL-213170.jpg" alt="Propiedad de la cartera de LPZ" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
       <div style="position:absolute;inset:0;background:linear-gradient(90deg,var(--verde) 0%,rgba(17,60,61,0) 22%)"></div>
     </div>
   </div>
@@ -1461,8 +1461,8 @@
 <section data-screen-label="Hero buscador" style="background:var(--hueso);border-bottom:1px solid var(--borde)">
   <div style="max-width:1400px;margin:0 auto;padding:clamp(44px,6vw,76px) 20px 0;text-align:center">
     <img loading="lazy" src="img/escudo-lpz.png" alt="LPZ Propiedades" style="width:clamp(76px,9vw,100px);height:clamp(76px,9vw,100px);border-radius:16px;object-fit:cover;margin:0 auto;display:block;box-shadow:0 16px 40px rgba(17,60,61,.2);animation:rise .7s cubic-bezier(.22,.61,.36,1) both" />
-    <h1 style="margin:20px 0 0;font-family:'Libre Caslon Text',Georgia,serif;font-weight:700;font-size:clamp(38px,6vw,68px);line-height:1;letter-spacing:.02em;color:var(--verde);animation:rise .7s cubic-bezier(.22,.61,.36,1) .08s both">MOLINS</h1>
-    <p style="margin:10px 0 0;font-size:clamp(12px,1.4vw,15px);font-weight:600;letter-spacing:.26em;color:var(--tinta-suave);animation:rise .7s cubic-bezier(.22,.61,.36,1) .14s both">NEGOCIOS INMOBILIARIOS · SALTA</p>
+    <h1 style="margin:20px 0 0;font-family:'Libre Caslon Text',Georgia,serif;font-weight:700;font-size:clamp(38px,6vw,68px);line-height:1;letter-spacing:.02em;color:var(--verde);animation:rise .7s cubic-bezier(.22,.61,.36,1) .08s both">LPZ</h1>
+    <p style="margin:10px 0 0;font-size:clamp(12px,1.4vw,15px);font-weight:600;letter-spacing:.26em;color:var(--tinta-suave);animation:rise .7s cubic-bezier(.22,.61,.36,1) .14s both">PROPIEDADES · SALTA</p>
     <p style="margin:16px auto 0;font-size:13px;font-weight:600;color:var(--naranja-oscuro);display:inline-flex;align-items:center;gap:7px;background:var(--naranja-suave);border:1px solid var(--naranja-borde);padding:7px 14px;border-radius:100px;animation:rise .7s cubic-bezier(.22,.61,.36,1) .2s both">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
       Grupo LPZ-Molins · CUCIS 251</p>
@@ -1612,11 +1612,11 @@
     <div class="editorial">
       <span class="editorial__sobre">Comercialización exclusiva</span>
       <h2 class="editorial__titulo" aria-label="Oportunidades"><span class="editorial__mascara"><span class="editorial__palabra">Oportunidades</span></span></h2>
-      <p class="editorial__bajada">Dos desarrollos que se adaptan a tu medida.</p>
+      <p class="editorial__bajada">Un desarrollo que se adapta a tu medida.</p>
     </div>
   </div></div>
 
-  <!-- Aires siempre primero (Fran, 10/9); La Torre se apila encima al bajar.
+  <!-- En el portal de Luis hay un solo desarrollo: Aires (La Torre no la comercializa él).
        Aires: el bloque con la paleta de su web (verde hondo, crema, arena) -->
   <article class="bloque bloque--aires" data-screen-label="Bloque Aires">
     <div class="bloque__fondo" style="background-image:url('img/aires-laguna.webp')"></div>
@@ -1647,38 +1647,6 @@
     </div>
   </article>
 
-  <!-- La Torre: el bloque con su paleta (terracota sobre noche, crema) -->
-  <article class="bloque bloque--torre" data-screen-label="Bloque La Torre">
-    <div class="bloque__fondo" style="background-image:url('img/torre-frente.webp')"></div>
-    <div class="bloque__velo"></div>
-    <div class="bloque__caja">
-      <div class="bloque__texto">
-        <span class="bloque__etiqueta">Edificio · Balcarce y Aniceto Latorre</span>
-        <h3 class="bloque__titulo">La Torre</h3>
-        <p class="bloque__bajada">Doce unidades en dos torres, en el centro de Salta. Un edificio con la escala justa, para vivir o para renta.</p>
-        <div class="bloque__foto bloque__video bloque__video--movil"><video data-src="video/torre-render.mp4" poster="video/torre-render.jpg" muted loop playsinline preload="none" aria-label="Renders del Edificio La Torre" disablepictureinpicture disableremoteplayback></video><span>El edificio · render</span></div>
-        <div data-si="hayTorre" hidden>
-          <p class="bloque__dato"><span class="bloque__punto"></span><span data-txt="torreLinea"></span><span class="bloque__desde" data-txt="torreDesde"></span></p>
-          <div class="torre-grilla" aria-label="Las doce unidades, por piso">
-            <template data-lista="torreGrilla" data-alias="f">
-              <div class="torre-fila">
-                <span class="torre-piso" data-txt="f.piso"></span>
-                <template data-lista="f.unidades" data-alias="u">
-                  <button type="button" data-attr-class="u.clase" data-click="u.abrir" data-attr-title="u.titulo"><span data-txt="u.k"></span></button>
-                </template>
-              </div>
-            </template>
-            <div class="torre-leyenda"><span><i></i> Disponible</span><span><i class="es-reservada"></i> Reservada</span><span class="torre-leyenda__ayuda">Tocá una unidad para ver el render y el plano</span></div>
-          </div>
-        </div>
-        <div class="bloque__acciones">
-          <a class="bloque__enlace" href="https://edificiolatorre.com/" target="_blank" rel="noopener"><span>Entrar a edificiolatorre.com</span><small>La torre en 3D, cada departamento con su plano y las unidades en vivo</small><i>↗</i></a>
-          <button type="button" class="bloque__enlace bloque__enlace--suave" data-click="consultarTorre"><span>Consultar por La Torre</span><small>Te contestamos por WhatsApp</small><i>→</i></button>
-        </div>
-      </div>
-      <div class="bloque__foto bloque__video bloque__video--esc"><video data-src="video/torre-render.mp4" poster="video/torre-render.jpg" muted loop playsinline preload="none" aria-label="Renders del Edificio La Torre" disablepictureinpicture disableremoteplayback></video><span>El edificio · render</span></div>
-    </div>
-  </article>
 </section>
 
 <!-- ══ CIERRE DEL INICIO: la invitación a escribir (contacto y preguntas viven en sus ventanas) ══ -->
@@ -1691,7 +1659,7 @@
     </div>
     <div class="cierre__botones">
       <a href="#contacto" class="cierre__btn btn-anim brilla">Escribinos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-      <a href="https://wa.me/5493874153669?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener" class="cierre__btn cierre__btn--wa btn-anim brilla"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg>WhatsApp</a>
+      <a href="https://wa.me/5493875030113?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener" class="cierre__btn cierre__btn--wa btn-anim brilla"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg>WhatsApp</a>
       <a href="#preguntas" class="cierre__link">Preguntas frecuentes →</a>
     </div>
   </div>
@@ -1712,8 +1680,8 @@
       <div class="preguntas__intro">
         <span class="etiqueta-seccion">Antes de escribir</span>
         <h2>Lo que siempre preguntan</h2>
-        <p>Las respuestas cortas y honestas. Lo largo, con Francisco, por WhatsApp.</p>
-        <a class="preguntas__wa" href="https://wa.me/5493874153669?text=Hola%2C%20tengo%20una%20consulta%20que%20no%20est%C3%A1%20en%20las%20preguntas%20del%20sitio." target="_blank" rel="noopener">
+        <p>Las respuestas cortas y honestas. Lo largo, con Luis, por WhatsApp.</p>
+        <a class="preguntas__wa" href="https://wa.me/5493875030113?text=Hola%2C%20tengo%20una%20consulta%20que%20no%20est%C3%A1%20en%20las%20preguntas%20del%20sitio." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg>
           <span><b>¿Otra duda?</b><small>Escribinos, sin compromiso</small></span></a>
       </div>
@@ -1748,21 +1716,17 @@
         <h2>Contanos qué buscás.<br>Si no lo tenemos, lo buscamos por vos.</h2>
         <p>Una persona te contesta, no un bot. Las consultas entran al sistema y te respondemos al momento.</p>
         <div class="canales">
-          <a class="canal canal--wa" href="https://wa.me/5493874153669?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener">
+          <a class="canal canal--wa" href="https://wa.me/5493875030113?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener">
             <span class="canal__icono"><svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg></span>
-            <span class="canal__texto"><b>WhatsApp</b><span>387 415 3669</span><small>Lo más rápido. Mandá el código de la ficha.</small></span>
+            <span class="canal__texto"><b>WhatsApp</b><span>387 503 0113</span><small>Lo más rápido. Mandá el código de la ficha.</small></span>
             <i>→</i></a>
-          <a class="canal" href="tel:+543874153669">
+          <a class="canal" href="tel:+543875030113">
             <span class="canal__icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:21px;height:21px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
-            <span class="canal__texto"><b>Llamar</b><span>387 415 3669</span><small>Si preferís hablar.</small></span>
+            <span class="canal__texto"><b>Llamar</b><span>387 503 0113</span><small>Si preferís hablar.</small></span>
             <i>→</i></a>
           <a class="canal" href="https://maps.google.com/?q=20+de+Febrero+1705+Salta" target="_blank" rel="noopener">
             <span class="canal__icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:21px;height:21px"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
             <span class="canal__texto"><b>La oficina</b><span>20 de Febrero 1705, Of. 7 · Salta</span><small>Con cita. Cómo llegar en el mapa.</small></span>
-            <i>→</i></a>
-          <a class="canal" href="https://instagram.com/molins.negociosinmobilarios" target="_blank" rel="noopener">
-            <span class="canal__icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" style="width:21px;height:21px"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></span>
-            <span class="canal__texto"><b>Instagram</b><span>@molins.negociosinmobilarios</span><small>Las propiedades nuevas salen primero ahí.</small></span>
             <i>→</i></a>
         </div>
         <p class="contacto__matricula">Grupo LPZ-Molins · CUCIS 251 · Corredor matriculado Luis López</p>
@@ -1823,11 +1787,11 @@
             <h3>Consulta recibida</h3>
             <p><span data-txt="okMsg"></span></p>
             <ol class="contacto__pasos">
-              <li><b>Ya está en el sistema.</b> Francisco la ve en el momento.</li>
+              <li><b>Ya está en el sistema.</b> Luis la ve en el momento.</li>
               <li><b>Te escribimos por WhatsApp</b> con lo que haya para tu búsqueda.</li>
               <li><b>Si querés ver algo,</b> coordinamos la visita con turno.</li>
             </ol>
-            <a class="contacto__urgente" href="https://wa.me/5493874153669?text=Hola%2C%20acabo%20de%20dejar%20una%20consulta%20en%20el%20sitio." target="_blank" rel="noopener">Si es urgente, escribinos por WhatsApp →</a>
+            <a class="contacto__urgente" href="https://wa.me/5493875030113?text=Hola%2C%20acabo%20de%20dejar%20una%20consulta%20en%20el%20sitio." target="_blank" rel="noopener">Si es urgente, escribinos por WhatsApp →</a>
           </div>
         </div>
       </div>
@@ -2015,33 +1979,31 @@
 </div>
 <div data-si="toast" hidden><div class="toast"><span data-txt="toastTxt"></span></div></div>
 
-<!-- ══ FOOTER · Molins grande, Grupo LPZ chico ══ -->
+<!-- ══ FOOTER · LPZ grande, Molins chico ══ -->
 <footer data-screen-label="Pie" class="pie">
   <div class="pie__in">
     <div class="pie__fila">
       <div class="pie__logo">
         <img loading="lazy" src="img/escudo-lpz.png" alt="LPZ Propiedades" width="30" height="30" />
-        <div><b>MOLINS</b><small>NEGOCIOS INMOBILIARIOS</small></div>
+        <div><b>LPZ</b><small>PROPIEDADES</small></div>
       </div>
       <nav class="pie__links" aria-label="Pie">
         <a href="#propiedades">Propiedades</a>
         <a href="https://airesdesanlorenzo.com/" target="_blank" rel="noopener">Aires</a>
-        <a href="https://edificiolatorre.com/" target="_blank" rel="noopener">La Torre</a>
         <a href="#preguntas">Preguntas</a>
-        <a href="https://instagram.com/molins.negociosinmobilarios" target="_blank" rel="noopener">Instagram</a>
       </nav>
-      <a href="https://wa.me/5493875030113" target="_blank" rel="noopener" aria-label="Grupo LPZ, Luis López, por WhatsApp" class="pie__lpz">
-        <img loading="lazy" src="img/logo-lpz.png" alt="Grupo LPZ" width="731" height="900" /></a>
+      <a href="https://wa.me/5493874153669" target="_blank" rel="noopener" aria-label="Francisco Molins, por WhatsApp" class="pie__lpz pie__lpz--socio">
+        <img loading="lazy" src="img/escudo-molins.png" alt="Molins Negocios Inmobiliarios" width="298" height="381" /></a>
     </div>
     <div class="pie__abajo">
       <span class="pie__matricula">Grupo LPZ-Molins · CUCIS 251 · Corredor matriculado Luis López</span>
-      <span>© 2026 Francisco Molins · 20 de Febrero 1705, Of. 7, Salta</span>
+      <span>© 2026 Luis López · 20 de Febrero 1705, Of. 7, Salta</span>
     </div>
   </div>
 </footer>
 
 <!-- FAB WhatsApp -->
-<a class="fab" href="https://wa.me/5493874153669?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" style="position:fixed;right:16px;bottom:16px;z-index:150;width:54px;height:54px;border-radius:50%;background:var(--whatsapp);color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(37,211,102,.38);transition:transform .22s cubic-bezier(.22,.61,.36,1)" data-fx="fx-8">
+<a class="fab" href="https://wa.me/5493875030113?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" style="position:fixed;right:16px;bottom:16px;z-index:150;width:54px;height:54px;border-radius:50%;background:var(--whatsapp);color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(37,211,102,.38);transition:transform .22s cubic-bezier(.22,.61,.36,1)" data-fx="fx-8">
   <svg viewBox="0 0 24 24" fill="currentColor" style="width:28px;height:28px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg>
 </a>
 
@@ -2164,9 +2126,9 @@
       </div>
       <div class="ficha__pie">
         <div class="ficha__pie-in">
-          <div class="marca"><img src="img/escudo-lpz.png" alt="" width="40" height="40" /><span><b>Francisco Molins</b><small>Real estate · Salta</small></span></div>
+          <div class="marca"><img src="img/escudo-lpz.png" alt="" width="40" height="40" /><span><b>Luis López</b><small>Real estate · Salta</small></span></div>
           <div class="ficha__pie-links">
-            <a href="https://wa.me/5493874153669?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener">WhatsApp 387 415 3669</a>
+            <a href="https://wa.me/5493875030113?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener">WhatsApp 387 503 0113</a>
             <a href="#contacto">Escribinos</a>
             <a href="#preguntas">Preguntas frecuentes</a>
             <button type="button" data-click="cerrarFicha">Volver al inicio ↑</button>
@@ -2209,6 +2171,6 @@
 
 <script src="src/pintor.js?v=20260911a"></script>
 <script src="src/medicion.js?v=20260911a"></script>
-<script src="src/app.js?v=20260911a"></script>
+<script src="src/app.js?v=20260916a"></script>
 </body>
 </html>
