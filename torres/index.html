@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edificio La Torre</title>
+
+<!-- Esta página era el sitio de La Torre. Desde el 2/9 el emprendimiento tiene
+     dirección propia y acá sólo queda la redirección, para que no se parta la
+     medición ni el posicionamiento entre dos direcciones con el mismo contenido.
+     `canonical` le dice a Google cuál manda, el `refresh` cubre a quien tenga el
+     JavaScript apagado, y el `location.replace` se lleva el ancla: quien tenía
+     guardado /torres/#unidades cae en la sección de unidades y no arriba de todo.
+     No lleva `noindex`: en una página que redirige, apaga la señal que uno
+     justamente quiere que Google siga. -->
+<link rel="canonical" href="https://edificiolatorre.com/">
+<meta http-equiv="refresh" content="0; url=https://edificiolatorre.com/">
+<script>location.replace("https://edificiolatorre.com/" + (location.hash || ""));</script>
+
+<style>
+  :root { --tinta: #16211F; --gris: #5C6B68; --verde: #0F7A6D; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px;
+         background: #FBF9F6; color: var(--tinta);
+         font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 40ch; text-align: center; }
+  h1 { font-size: 19px; font-weight: 600; margin: 0 0 10px; }
+  p { margin: 0; color: var(--gris); }
+  a { display: inline-block; margin-top: 18px; min-height: 44px; padding: 12px 22px;
+      background: var(--tinta); color: #fff; border-radius: 6px; font-weight: 600;
+      text-decoration: none; }
+</style>
+</head>
+<body>
+  <main>
+    <h1>El Edificio La Torre se mudó</h1>
+    <p>Ahora tiene su propia dirección. Si no te lleva sola en un segundo, entrá acá.</p>
+    <a href="https://edificiolatorre.com/">edificiolatorre.com</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,4 @@
+.DS_Store
+
+# Intermedios del transpilador de molins-torres: no se usan en el sitio.
+build/
