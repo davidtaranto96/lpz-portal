@@ -196,10 +196,12 @@
       });
   }
 
-  /* El número de propiedades sube de 0 al total la primera vez que se ve. */
+  /* El número de propiedades sube de 0 al total la primera vez que se ve. Se anima el <span> de
+     adentro, el que pinta `resultadoTxt`: escribir en el envoltorio borraba ese span y el conteo
+     quedaba clavado en el total aunque se filtrara (16/9). Al terminar se repinta con el real. */
   function contarCartera(total) {
     if (matchMedia("(prefers-reduced-motion:reduce)").matches || !("IntersectionObserver" in window)) return;
-    var el = document.querySelector(".fila-solapas__n"); if (!el) return;
+    var caja = document.querySelector(".fila-solapas__n"), el = caja && caja.querySelector("[data-txt]"); if (!el) return;
     var obs = new IntersectionObserver(function (es) {
       if (!es[0].isIntersecting) return; obs.disconnect();
       var t0 = null, dur = 900;
@@ -207,10 +209,10 @@
         if (!t0) t0 = t;
         var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3), n = Math.round(total * e);
         el.textContent = n === 1 ? "1 propiedad" : n + " propiedades";
-        if (k < 1) requestAnimationFrame(paso);
+        if (k < 1) requestAnimationFrame(paso); else pintar();
       })(performance.now());
     }, { threshold: 0.5 });
-    obs.observe(el);
+    obs.observe(caja);
   }
 
   /* La última búsqueda se recuerda en la pestaña: si vuelve de una ficha por
@@ -802,6 +804,11 @@
       bOper: S.bOper, bZona: S.bZona,
       cambiarBOper: function (ev) { set({ bOper: ev.target.value, seg: ev.target.value }); guardarBusqueda(); },
       cambiarBZona: function (ev) { set({ bZona: ev.target.value }); },
+      /* Las pestañas del buscador de la portada (portal de Luis): la operación con su cantidad. */
+      pestanasBusca: [["todo", "Todas", S.props.length], ["venta", "Comprar", nVenta], ["alquiler", "Alquilar", nAlquiler], ["terreno", "Terrenos", nTerreno]].map(function (o) {
+        var k = o[0], activa = S.bOper === k;
+        return { k: k, t: o[1], n: S.cargando ? "" : String(o[2]), activa: activa ? "true" : "false", clase: "busca-pest" + (activa ? " es-activa" : ""), elegir: function () { set({ bOper: k, seg: k }); guardarBusqueda(); } };
+      }),
       buscarDesdeHero: function (ev) { if (ev && ev.preventDefault) ev.preventDefault(); set({ seg: S.bOper, fZona: S.bZona }); guardarBusqueda(); scrollA("propiedades"); if (window.VISITAS) VISITAS.anotar("buscar", (S.fTexto || "") + "|" + S.bOper + "|" + S.bZona); },
       zonasSelect: zonasSelect, tipos: tipos,
 

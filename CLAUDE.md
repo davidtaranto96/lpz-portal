@@ -67,6 +67,14 @@ David: que se parezcan pero no sean iguales, para que no se confunda la gente ni
     de `app.js` (el mismo de Aires) recién cuando se ven; el del otro ancho está oculto y no se baja.
     Con `prefers-reduced-motion` o ahorro de datos queda el póster.
   - El velo oscurece arriba y al centro y deja los bordes claros: el video es de día.
+- **Buscador con pestañas** (16/9, tercera vuelta, «inspirarse en la competencia»): arriba de una
+  tarjeta blanca, las pestañas Todas · Comprar · Alquilar · Terrenos con la cantidad de cada una
+  (`pestanasBusca` en `app.js`), como Noman, NMS, Carina Nuñez o Compass. Reemplazan el desplegable
+  de operación, que queda oculto. Botón «Buscar» rectangular y carbón. Pegado bajo la barra, las
+  pestañas se apagan y el `top` resta `--pest-h`: esconderlas cambiando el alto haría saltar la página.
+- **Texto de la portada**: «Tu próxima propiedad en Salta» y «Casas, terrenos y alquileres ·
+  Corredor matriculado CUCIS 251» (en el celular, en dos líneas sin el punto). Los botones son menos
+  redondeados que las píldoras de Fran, y el de la barra dice «Buscar propiedades».
 - **Aires es una tarjeta aparte**, con bordes redondeados y margen, y la hoja de contacto ya no la
   tapa al bajar (en el de Fran se apilan).
 - Todo eso vive en el bloque «LPZ Propiedades: lo que lo separa del portal de Fran», al final del

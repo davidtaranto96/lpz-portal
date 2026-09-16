@@ -1249,6 +1249,10 @@
   :root{--portada-h:max(440px,min(60svh,600px));--busc-sube:calc(var(--portada-h) * .36)}
   /* Besley ocupa más: el titular va en dos líneas y un poco más chico, o se pegaba a la barra. */
   .portada__titulo{font-size:clamp(34px,3.7vw,54px);max-width:24ch}
+  .portada__sub{text-wrap:balance}
+  /* Aire entre la bajada y las pestañas. La caja era content-box: el padding le sumaba alto en vez
+     de subir el texto, y la bajada quedaba pegada a las pestañas. */
+  .portada__centro{box-sizing:border-box;padding-bottom:24px}
   .portada__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;display:block;transform:scale(1.03);animation:portadaEntra 1.8s cubic-bezier(.2,.8,.2,1) both}
   .portada__video--movil{display:none}
   /* El video es de día: el velo oscurece arriba (la barra) y al centro (el texto), y deja los bordes
@@ -1260,6 +1264,8 @@
     .portada__video--esc{display:none}
     .portada__video--movil{display:block;object-position:50% 100%}
     .portada__titulo{font-size:clamp(28px,7.8vw,36px);max-width:14ch}
+    .portada__sub span{display:block}.portada__sub .portada__punto{display:none}
+    .portada__centro{padding-bottom:16px}
     /* Besley es más ancha que la Caslon del de Fran: «OPORTUNIDADES» mide 9,7 veces el cuerpo
        y en el celular se cortaba. El cuerpo sale del ancho que hay. */
     .editorial__titulo{font-size:min(56px,calc((100vw - 48px) / 10))}
@@ -1274,6 +1280,41 @@
   @media (min-width:1500px){#proyectos .bloque--aires{max-width:1452px;margin:0 auto}}
   #proyectos::after{display:none}
   main .cierre{margin-top:0;min-height:0;border-radius:0;box-shadow:none;padding:clamp(48px,6vw,88px) 20px}
+  /* El buscador de Luis: pestañas con la cantidad arriba de una tarjeta, en lugar de la píldora con
+     desplegables del portal de Fran. Pegado bajo la barra, las pestañas se apagan y la tarjeta sube
+     su alto (el `top` resta --pest-h): cambiar el alto del elemento pegado haría saltar la página. */
+  :root{--pest-h:38px}
+  .busca-pestanas{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;transition:opacity .25s,visibility .25s}
+  .busca-pestanas::-webkit-scrollbar{display:none}
+  .buscador--entra .busca-pestanas{animation:buscEntra .9s cubic-bezier(.2,.8,.2,1) .2s both}
+  .busca-pest{flex:none;display:inline-flex;align-items:center;gap:7px;height:var(--pest-h);border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:#fff;background:rgba(22,20,18,.52);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:0 16px;border-radius:10px 10px 0 0;transition:background .2s,color .2s}
+  .busca-pest small{font-size:12px;font-weight:700;opacity:.72;font-variant-numeric:tabular-nums}
+  .busca-pest small:empty{display:none}
+  .busca-pest:hover{background:rgba(22,20,18,.72)}
+  .busca-pest.es-activa{background:#fff;color:var(--tinta)}
+  .busca-pest.es-activa small{color:var(--naranja-oscuro);opacity:1}
+  .busca-pest:focus-visible{outline:2px solid var(--naranja);outline-offset:-2px}
+  #buscador .buscador__caja{border-radius:0 14px 14px 14px;background:#fff;border-color:#fff}
+  #buscador .buscador__texto + .buscador__sep,#buscador .buscador__sel[data-change="cambiarBOper"]{display:none}
+  #buscador .buscador__ir{border-radius:10px;background:var(--verde);color:#fff;box-shadow:none}
+  #buscador .buscador__ir:hover{background:var(--naranja);color:var(--verde-noche);box-shadow:0 10px 24px rgba(240,115,24,.35)}
+  .buscador{top:calc(var(--barra,84px) + 12px - var(--pest-h));margin-bottom:calc(var(--busc-sube) - 31px - var(--pest-h))}
+  .buscador.es-pegado{top:calc(var(--barra,64px) + 4px - var(--pest-h))}
+  html.es-bajando .buscador.es-pegado{top:calc(8px - var(--pest-h))}
+  .buscador.es-pegado .busca-pestanas{opacity:0;visibility:hidden}
+  .buscador.es-pegado .buscador__caja{border-radius:14px}
+  /* Botones menos redondeados que en el de Fran, que usa píldoras. */
+  .barra__nav{border-radius:16px}
+  .barra__buscar{border-radius:10px}
+  .segmento[data-k]{border-radius:12px}
+  @media (max-width:899px){
+    :root{--pest-h:36px}
+    .buscador{top:calc(var(--barra,64px) + 8px - var(--pest-h));margin-bottom:calc(var(--busc-sube) - 27px - var(--pest-h))}
+    .busca-pest{font-size:13px;padding:0 12px;gap:5px}
+    #buscador .buscador__ir{border-radius:10px}
+    .filtros-btn{border-radius:10px!important}
+    .selector--chico{border-radius:10px}
+  }
 </style>
 
 <title>Luis López — Real Estate · Salta</title>
@@ -1328,7 +1369,7 @@
     document.head.appendChild(cf);
   }
 </script>
-<link rel="stylesheet" href="src/estilos.css?v=20260916d">
+<link rel="stylesheet" href="src/estilos.css?v=20260916e">
 </head>
 <body>
 
@@ -1347,7 +1388,7 @@
     </a>
     <div data-si="noEsMovil" hidden style="flex:1 1 auto;display:flex;align-items:center;justify-content:center;gap:22px">
       <nav class="barra__nav">
-        <button type="button" class="barra__buscar" data-click="abrirBuscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="barra__buscar-largo">Buscar entre todas las propiedades</span><span class="barra__buscar-corto">Buscar</span></button>
+        <button type="button" class="barra__buscar" data-click="abrirBuscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="barra__buscar-largo">Buscar propiedades</span><span class="barra__buscar-corto">Buscar</span></button>
         <span class="barra__desp">
           <a href="#proyectos" aria-haspopup="true">Proyectos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;margin-left:5px"><path d="m6 9 6 6 6-6"></path></svg></a>
           <div class="barra__menu"><div class="barra__menu-caja">
@@ -1392,7 +1433,7 @@
       <a class="menu__item" href="#contacto" data-click="cerrarMenu" style="--i:3">Contacto<i class="menu__chev menu__chev--ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></a>
     </nav>
     <div class="menu__pie">
-      <button type="button" class="menu__buscar brilla" data-click="abrirBuscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>Buscar entre todas las propiedades</button>
+      <button type="button" class="menu__buscar brilla" data-click="abrirBuscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>Buscar propiedades</button>
       <a class="menu__wa" href="https://wa.me/5493875030113?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg><span>WhatsApp · 387 503 0113</span></a>
       <span class="menu__nota">20 de Febrero 1705, Of. 7 — Salta<br />CUCIS 251 · Grupo LPZ-Molins</span>
     </div>
@@ -1415,8 +1456,8 @@
   </div>
   <div class="portada__velo"></div>
   <div class="portada__centro">
-    <h1 class="portada__titulo">Casas, departamentos y terrenos en Salta</h1>
-    <p class="portada__sub"><span data-txt="resumenCartera"></span></p>
+    <h1 class="portada__titulo">Tu próxima propiedad en Salta</h1>
+    <p class="portada__sub"><span>Casas, terrenos y alquileres</span><span class="portada__punto"> · </span><span>Corredor matriculado CUCIS 251</span></p>
   </div>
 </section>
 </div>
@@ -1424,6 +1465,13 @@
 <!-- El buscador flota entre la portada y las tarjetas y se queda pegado bajo la barra al bajar. -->
 <div id="buscador-lugar" aria-hidden="true"></div>
 <div id="buscador" class="buscador buscador--entra" data-screen-label="Buscador">
+  <!-- Pestañas con la cantidad de cada operación arriba de la tarjeta, como Noman, NMS, Carina
+       Nuñez o Compass. Reemplazan el desplegable de operación, que en este portal queda oculto. -->
+  <div class="busca-pestanas" role="group" aria-label="Qué buscás">
+    <template data-lista="pestanasBusca" data-alias="o" data-clave="o.k">
+      <button type="button" data-attr-class="o.clase" data-attr-aria-pressed="o.activa" data-click="o.elegir"><span data-txt="o.t"></span><small data-txt="o.n"></small></button>
+    </template>
+  </div>
   <form class="buscador__caja" data-submit="buscarDesdeHero" role="search" aria-label="Buscar propiedades">
     <label class="buscador__texto">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" style="width:19px;height:19px;flex:none"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
@@ -2206,6 +2254,6 @@
 
 <script src="src/pintor.js?v=20260911a"></script>
 <script src="src/medicion.js?v=20260911a"></script>
-<script src="src/app.js?v=20260916c"></script>
+<script src="src/app.js?v=20260916d"></script>
 </body>
 </html>
