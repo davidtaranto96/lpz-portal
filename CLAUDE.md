@@ -40,6 +40,28 @@ comparten el CRM; lo que separa a uno del otro es la cartera.
 | Oportunidades | Aires y La Torre | **sólo Aires**: Luis no comercializa La Torre |
 | Contacto, Preguntas, terrenos, propiedades | — | iguales a los de Fran, por ahora |
 
+### Lo que lo separa del de Fran a simple vista (16/9, segunda vuelta)
+
+David: que se parezcan pero no sean iguales, para que no se confunda la gente ni ellos mismos.
+
+- **Paleta de la marca de Luis**: carbón (`--verde: #2B2825`, `--verde-noche: #1B1917`), naranja de
+  la corona (`--naranja: #F07318`) y fondo piedra (`--hueso: #F4F3F0`). **Los nombres de los tokens
+  siguen siendo los del portal de Fran** («verde» es el carbón): se cambió el valor, no el nombre,
+  para no tocar cientos de reglas. Los `rgba()` verdes escritos a mano se pasaron a carbón.
+- **Tipografía**: Besley (títulos, una Clarendon sólida como las letras del logo) y Hanken Grotesk
+  (texto). Fran usa Libre Caslon Text y Archivo. Besley es más ancha: «OPORTUNIDADES» en el celular
+  toma el cuerpo del ancho disponible.
+- **Portada más baja, con Salta de noche**: 60svh en escritorio y 52svh en el celular, **para que
+  las propiedades asomen apenas se abre la página** (lo pidió Luis). La foto es de Heather Emond,
+  CC0 (Unsplash, vía Wikimedia Commons, `File:Salta_-_noche.jpg`): las luces de la ciudad desde el
+  San Bernardo con un rayo. Dos recortes: `img/portada-salta.webp` (escritorio, sin la torre del
+  teleférico) y `-movil.webp`. La foto se acerca muy despacio (`@keyframes deriva`, 40 s, se apaga
+  con `prefers-reduced-motion`).
+- **Aires es una tarjeta aparte**, con bordes redondeados y margen, y la hoja de contacto ya no la
+  tapa al bajar (en el de Fran se apilan).
+- Todo eso vive en el bloque «LPZ Propiedades: lo que lo separa del portal de Fran», al final del
+  `<style>` del `index.html`.
+
 Lo que se sacó por La Torre: el bloque, la entrada del menú (escritorio y celular), el enlace del
 pie, la opción «Edificio La Torre» del formulario, `torres/`, sus videos y renders. En `app.js` la
 carga de las unidades sólo corre si existe `.bloque--torre`, y el apilado de los bloques se arma
@@ -60,7 +82,6 @@ Lo que sigue igual a propósito:
   contesta «No pudimos enviar la consulta» y ofrece WhatsApp. **Nunca ponerle la clave de Fran.**
 - **Sin indexar**: `noindex` en el `index.html` y `robots.txt` con `Disallow: /`, hasta que tenga
   dominio propio.
-- La foto de portada es la del estudio de la web de Fran.
 
 **Lo que se hace en el CRM y no acá** (desde la sesión de `crm-molins/app`): la clave de sitio de
 Luis, y el modelo de «un portal por dueño» que planteó David el 16/9. Está en

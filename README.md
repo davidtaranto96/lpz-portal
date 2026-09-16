@@ -21,3 +21,8 @@ Tres valores al principio de `index.html`, en `window.MOLINS_*`:
 ## Deploy
 
 GitHub Pages desde `main`. `git push` es el deploy.
+
+## Créditos
+
+La foto de portada (`img/portada-salta*.webp`) es «Salta - noche», de Heather Emond, publicada en
+Unsplash y en Wikimedia Commons con licencia CC0: no requiere atribución. Se anota igual.

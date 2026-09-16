@@ -597,7 +597,7 @@
     var nVenta = cuenta("venta"), nTerreno = cuenta("terreno"), nAlquiler = cuenta("alquiler");
 
     var chipBase = "border:1.5px solid var(--borde-fuerte);background:#fff;color:var(--verde-claro);font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:100px;cursor:pointer;min-height:42px;display:inline-flex;align-items:center;transition:border-color .2s,background .2s,color .2s";
-    var chipOn = "border:1.5px solid var(--verde);background:var(--verde);color:#fff;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:100px;cursor:pointer;min-height:42px;display:inline-flex;align-items:center;box-shadow:0 5px 14px rgba(17,60,61,.22)";
+    var chipOn = "border:1.5px solid var(--verde);background:var(--verde);color:#fff;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:100px;cursor:pointer;min-height:42px;display:inline-flex;align-items:center;box-shadow:0 5px 14px rgba(43,40,37,.22)";
     var segmentos = [
       { k: "todo", t: "Todas", n: S.props.length },
       { k: "venta", t: "Venta", n: nVenta },
@@ -614,7 +614,7 @@
     var tipos = Object.keys(S.props.reduce(function (a, p) { a[p.tipo] = 1; return a; }, {})).sort(function (a, b) { return a.localeCompare(b, "es"); });
 
     function badgeDe(p) {
-      if (p.estado === "reservada") return { t: (p.tipo === "Casa" || p.tipo === "Finca" || p.tipo === "Oficina") ? "Reservada" : "Reservado", bg: "rgba(9,30,31,.72)" };
+      if (p.estado === "reservada") return { t: (p.tipo === "Casa" || p.tipo === "Finca" || p.tipo === "Oficina") ? "Reservada" : "Reservado", bg: "rgba(22,20,18,.72)" };
       if (p.operacion === "Alquiler") return { t: "En alquiler", bg: "var(--verde-claro)" };
       return null;
     }
@@ -949,7 +949,7 @@
   ];
 
   var FAQ = [
-    { n: "01", q: "¿Cómo coordino una visita?", a: "Escribinos por WhatsApp con el código de la ficha (el MOL-… que ves en cada propiedad) y proponé dos o tres horarios. Las visitas son con turno y las hace Francisco o Luis en persona. Si la propiedad no es la indicada, seguimos con otra: no hay compromiso hasta que hay algo firmado." },
+    { n: "01", q: "¿Cómo coordino una visita?", a: "Escribinos por WhatsApp con el código de la ficha (el MOL-… que ves en cada propiedad) y proponé dos o tres horarios. Las visitas son con turno y las hace Luis en persona. Si la propiedad no es la indicada, seguimos con otra: no hay compromiso hasta que hay algo firmado." },
     { n: "02", q: "¿Cuánto se paga de seña y qué pasa si me arrepiento?", a: "La reserva es un porcentaje chico del precio y se firma un recibo con plazo. Si el propietario no acepta la oferta, se devuelve. Si el que se arrepiente es el comprador, la seña se pierde. Todo queda por escrito antes de pagar." },
     { n: "03", q: "¿Quién paga los honorarios del corredor?", a: "En una venta, cada parte paga los honorarios de su corredor. El porcentaje se acuerda antes y figura en la autorización y en el boleto. No hay sorpresas al final." },
     { n: "04", q: "¿Qué es el informe de dominio y por qué importa?", a: "Es el certificado del Registro de la Propiedad que dice quién es el dueño y si hay hipotecas, embargos o inhibiciones. Se pide antes del boleto. Una propiedad sin informe no se firma." },

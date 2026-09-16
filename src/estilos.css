@@ -1,37 +1,40 @@
 :root{
-  --verde: #113C3D;
-  --verde-claro: #175052;
-  --tinta: #16211F;
-  --tinta-suave: #3E4F4D;
-  --gris: #66756F;
-  --naranja: #F66503;
+  /* LPZ Propiedades (16/9). Los NOMBRES son los del portal de Fran, del que salió este: «verde»
+     acá es el carbón de la marca de Luis. Se dejaron así para no tocar cientos de reglas; lo que
+     cambia es el valor. Paleta tomada del logo: naranja de la corona, carbón y gris metal. */
+  --verde: #2B2825;
+  --verde-claro: #45403A;
+  --tinta: #1D1B19;
+  --tinta-suave: #56504A;
+  --gris: #6E6861;
+  --naranja: #F07318;
   --corazon: #FF3B5C;
-  --hueso: #FAF9F5;
-  --crema: #EFF2EC;
-  --borde: #E3E6DF;
-  --borde-fuerte: #DDE1D8;
-  --naranja-oscuro: #B34A02;
-  --naranja-claro: #F5A56B;
-  --naranja-suave: #FDEFE3;
-  --naranja-palido: #FFC59B;
-  --naranja-borde: #F8D8BC;
-  --verde-suave: #EDF3F1;
-  --verde-palido: #F5F8F6;
-  --verde-medio: #155150;
-  --verde-hondo: #12403F;
-  --hueso-2: #F7F8F4;
-  --hueso-3: #F5F6F1;
-  --hueso-4: #F3F4EE;
-  --borde-suave: #E7EAE1;
+  --hueso: #F4F3F0;
+  --crema: #ECEAE6;
+  --borde: #E2DFDA;
+  --borde-fuerte: #D8D4CE;
+  --naranja-oscuro: #AE500B;
+  --naranja-claro: #F6A96A;
+  --naranja-suave: #FCEEE2;
+  --naranja-palido: #FFC89F;
+  --naranja-borde: #F6D9BF;
+  --verde-suave: #EFEDE9;
+  --verde-palido: #F7F6F3;
+  --verde-medio: #3A3531;
+  --verde-hondo: #24211E;
+  --hueso-2: #F1F0EC;
+  --hueso-3: #EEECE8;
+  --hueso-4: #EBE9E4;
+  --borde-suave: #E5E2DD;
   --whatsapp: #25D366;
-  --verde-noche: #0C2B2C;
+  --verde-noche: #1B1917;
   --ok: #1E8A50;
   --ok-claro: #4ADE80;
   --ok-suave: #E4F2EA;
-  --borde-2: #C9CFC2;
-  --borde-3: #DCE0D6;
-  --borde-4: #DCE5E2;
-  --borde-5: #EDEEE7;
+  --borde-2: #C9C4BD;
+  --borde-3: #DBD7D1;
+  --borde-4: #DCD8D2;
+  --borde-5: #ECEAE5;
   /* los dos emprendimientos, con su propia paleta (de sus webs) */
   --torre-terracota: #9C3A20;
   --torre-terracota-claro: #C9542F;
@@ -55,13 +58,13 @@
 [hidden]{display:none !important}
 
 /* Los hover y foco que el editor guardaba en atributos propios. */
-[data-fx~="fx-1"]:hover{background:#D95700;transform:translateY(-2px);}
-[data-fx~="fx-2"]:hover{background:#D95700;}
-[data-fx~="fx-3"]:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(17,60,61,.1),0 28px 56px rgba(17,60,61,.07);}
+[data-fx~="fx-1"]:hover{background:#D6620D;transform:translateY(-2px);}
+[data-fx~="fx-2"]:hover{background:#D6620D;}
+[data-fx~="fx-3"]:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(43,40,37,.1),0 28px 56px rgba(43,40,37,.07);}
 [data-fx~="fx-4"]:hover{background:#1EB558;}
 [data-fx~="fx-5"]:hover{border-color:var(--verde-claro);}
 [data-fx~="fx-6"]:hover{background:rgba(255,255,255,.18);}
-[data-fx~="fx-7"]:hover{border-color:var(--verde-claro);transform:translateY(-3px);box-shadow:0 1px 2px rgba(17,60,61,.04),0 8px 20px rgba(17,60,61,.08);}
+[data-fx~="fx-7"]:hover{border-color:var(--verde-claro);transform:translateY(-3px);box-shadow:0 1px 2px rgba(43,40,37,.04),0 8px 20px rgba(43,40,37,.08);}
 [data-fx~="fx-8"]:hover{transform:scale(1.07);}
 [data-fx~="fx-9"]:hover{border-color:var(--verde-claro);transform:translateY(-3px);}
 
