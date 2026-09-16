@@ -7,7 +7,7 @@
 El sitio público de **Luis López**, que va a publicar sus propiedades como hoy lo hace
 `franciscomolins.com` con las de Francisco Molins.
 
-**Por ahora es una copia exacta del portal de Fran con la marca de Luis.** Sale de
+**Es el espejo del portal de Fran, con Luis de principal** (ver la tabla más abajo). Sale de
 `~/Documents/DT-System/crm-molins/portal` (repo `molins-portal`), commit `661a038` del 11/9, sin su
 historial. Todo lo que lo vuelva de Luis se hace acá, en sesiones propias, para no cargar las de Fran.
 
