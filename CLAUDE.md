@@ -48,6 +48,9 @@ La lista para convertirlo, con cómo encontrar cada cosa:
 |---|---|---|
 | Nombre «Francisco Molins» y «Real estate · Salta» | `grep -n "Francisco" index.html` (12 líneas) | de Fran |
 | WhatsApp y teléfono de Fran, 387 415 3669 | `grep -n "3874153669\|387 415 3669" index.html` (10 lugares) | de Fran |
+| Marca «Molins · Negocios inmobiliarios» en el pie | `grep -n "Negocios inmobiliarios" index.html` (2) | de Fran |
+| Dirección de la oficina de Fran, 20 de Febrero 1705 | `grep -n "20 de Febrero" index.html` (3) | de Fran; **no inventar la de Luis**, pedirla |
+| Instagram `molins.negociosinmobilarios` | `grep -n "instagram.com" index.html` (2) | de Fran |
 | `<title>`, `description`, `og:title`, `og:description` | cabecera del `index.html` | de Fran |
 | Paleta verde noche (`--verde: #113C3D`) | `src/estilos.css` y el `<style>` del index | de Fran |
 | Foto de portada, el estudio de su web actual | `img/portada-estudio.webp` y `-movil.webp` | de Fran |
