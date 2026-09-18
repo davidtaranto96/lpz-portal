@@ -1314,6 +1314,9 @@
     #buscador .buscador__ir{border-radius:10px}
     .filtros-btn{border-radius:10px!important}
     .selector--chico{border-radius:10px}
+    /* A 360 px (muchos Samsung) conteo + orden + Filtros no entraban y la página se corría 6 px:
+       el select, con min-width automático, no se achicaba nunca. */
+    .fila-solapas__der .selector--chico{min-width:0}
   }
   /* El cierre de Luis: bloque naranja de la marca, texto carbón (5:1 de contraste), botón principal
      carbón y WhatsApp en blanco. El pie lleva una línea naranja arriba. */
@@ -1332,7 +1335,7 @@
 </style>
 
 <title>Luis López — Real Estate · Salta</title>
-<meta name="description" content="Casas, departamentos, locales, oficinas y terrenos en Salta. Cartera propia de Luis López, corredor inmobiliario matriculado CUCIS 251. Grupo LPZ-Molins." />
+<meta name="description" content="Casas, departamentos, locales, oficinas y terrenos en Salta. Cartera propia de Luis López, corredor inmobiliario matriculado, CUCIS M.P. 251. Grupo LPZ-Molins." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232E2C28'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23F37A1F'%3EL%3C/text%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Luis López — Real Estate · Salta" />
@@ -1393,12 +1396,13 @@
 <!-- NAV : el logo manda -->
 <header class="barra">
   <div style="max-width:1400px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px">
-    <!-- Espejo del portal de Fran (16/9): acá la marca grande es «Luis López · Real estate ·
-         Salta» con el escudo de LPZ, y a la derecha va el escudo de Molins (Fran), que lleva a
+    <!-- Espejo del portal de Fran (16/9): acá la marca grande es «Luis López · CUCIS M.P. 251 ·
+         Salta» con el escudo de LPZ (la matrícula debajo del nombre la pidió Luis el 18/9; por eso
+         el subtítulo de la portada y el pie del menú ya no la repiten), y a la derecha va el escudo de Molins (Fran), que lleva a
          su WhatsApp. En el de Fran es al revés: su escudo a la izquierda y Grupo LPZ a la derecha. -->
     <a href="#inicio" aria-label="Luis López, inicio" class="marca" style="flex:0 0 auto">
       <img src="img/escudo-lpz.png" alt="LPZ Propiedades" width="40" height="40" />
-      <span><b>Luis López</b><small>Real estate · Salta</small></span>
+      <span><b>Luis López</b><small>CUCIS M.P. 251 · Salta</small></span>
     </a>
     <div data-si="noEsMovil" hidden style="flex:1 1 auto;display:flex;align-items:center;justify-content:center;gap:22px">
       <nav class="barra__nav">
@@ -1449,7 +1453,7 @@
     <div class="menu__pie">
       <button type="button" class="menu__buscar brilla" data-click="abrirBuscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>Buscar propiedades</button>
       <a class="menu__wa" href="https://wa.me/5493875030113?text=Hola%2C%20vi%20el%20sitio%20y%20quiero%20consultar." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.052z"></path></svg><span>WhatsApp · 387 503 0113</span></a>
-      <span class="menu__nota">20 de Febrero 1705, Of. 7 — Salta<br />CUCIS 251 · Grupo LPZ-Molins</span>
+      <span class="menu__nota">20 de Febrero 1705, Of. 7 — Salta<br />Grupo LPZ-Molins</span>
     </div>
   </div>
 </div>
@@ -1471,7 +1475,7 @@
   <div class="portada__velo"></div>
   <div class="portada__centro">
     <h1 class="portada__titulo">Tu próxima propiedad en Salta</h1>
-    <p class="portada__sub"><span>Casas, terrenos y alquileres</span><span class="portada__punto"> · </span><span>Corredor matriculado CUCIS 251</span></p>
+    <p class="portada__sub"><span>Casas, terrenos y alquileres</span></p>
   </div>
 </section>
 </div>
@@ -1562,7 +1566,7 @@
     <p style="margin:10px 0 0;font-size:clamp(12px,1.4vw,15px);font-weight:600;letter-spacing:.26em;color:var(--tinta-suave);animation:rise .7s cubic-bezier(.22,.61,.36,1) .14s both">PROPIEDADES · SALTA</p>
     <p style="margin:16px auto 0;font-size:13px;font-weight:600;color:var(--naranja-oscuro);display:inline-flex;align-items:center;gap:7px;background:var(--naranja-suave);border:1px solid var(--naranja-borde);padding:7px 14px;border-radius:100px;animation:rise .7s cubic-bezier(.22,.61,.36,1) .2s both">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
-      Grupo LPZ-Molins · CUCIS 251</p>
+      Grupo LPZ-Molins · CUCIS M.P. 251</p>
     <div style="background:#fff;border:1px solid var(--borde);border-radius:14px;padding:10px;display:flex;gap:8px;flex-wrap:wrap;box-shadow:0 18px 44px rgba(43,40,37,.1);max-width:680px;margin:26px auto 0;animation:rise .7s cubic-bezier(.22,.61,.36,1) .28s both">
       <select data-valor="bOper" data-change="cambiarBOper" aria-label="Operación" style="flex:1 1 140px;min-height:48px;border:1.5px solid var(--borde);border-radius:9px;padding:10px 12px;font-size:14px;color:var(--tinta);background:var(--hueso);cursor:pointer">
         <option value="todo">Comprar o alquilar</option>
@@ -1827,7 +1831,7 @@
             <span class="canal__texto"><b>La oficina</b><span>20 de Febrero 1705, Of. 7 · Salta</span><small>Con cita. Cómo llegar en el mapa.</small></span>
             <i>→</i></a>
         </div>
-        <p class="contacto__matricula">Grupo LPZ-Molins · CUCIS 251 · Corredor matriculado Luis López</p>
+        <p class="contacto__matricula">Grupo LPZ-Molins · Corredor matriculado Luis&nbsp;López&nbsp;·&nbsp;CUCIS&nbsp;M.P.&nbsp;251</p>
       </div>
 
       <div class="contacto__form">
@@ -2094,7 +2098,7 @@
         <img loading="lazy" src="img/escudo-molins.png" alt="Molins Negocios Inmobiliarios" width="298" height="381" /></a>
     </div>
     <div class="pie__abajo">
-      <span class="pie__matricula">Grupo LPZ-Molins · CUCIS 251 · Corredor matriculado Luis López</span>
+      <span class="pie__matricula">Grupo LPZ-Molins · Corredor matriculado Luis&nbsp;López&nbsp;·&nbsp;CUCIS&nbsp;M.P.&nbsp;251</span>
       <span>© 2026 Luis López · 20 de Febrero 1705, Of. 7, Salta</span>
     </div>
   </div>
@@ -2231,7 +2235,7 @@
             <a href="#preguntas">Preguntas frecuentes</a>
             <button type="button" data-click="cerrarFicha">Volver al inicio ↑</button>
           </div>
-          <small>Grupo LPZ-Molins · CUCIS 251 · Corredor matriculado Luis López</small>
+          <small>Grupo LPZ-Molins · Corredor matriculado Luis&nbsp;López&nbsp;·&nbsp;CUCIS&nbsp;M.P.&nbsp;251</small>
         </div>
       </div>
       <div data-si="esMovil" hidden>

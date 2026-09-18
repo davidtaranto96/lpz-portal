@@ -2,3 +2,6 @@
 
 # Intermedios del transpilador de molins-torres: no se usan en el sitio.
 build/
+
+# Las guías del CRM (llevan usuario y clave) no se publican: este repo es público.
+Guia-de-uso-*.pdf

@@ -23,6 +23,11 @@ comparten el CRM; lo que separa a uno del otro es la cartera.
 - La comercializadora es **Grupo LPZ-Molins · CUCIS 251**, y el corredor matriculado es Luis. Se
   escribe así, en ese orden: lo corrigió Francisco el 1/9 porque en las webs decía «LPZ Grupo y
   Molins» y «CUCIS MP 251».
+- **En este portal la matrícula va con M.P. y pegada a su nombre** (lo pidió Luis el 18/9: «donde
+  dice Luis López, CUCIS M.P. 251»). La marca de arriba es «Luis López · CUCIS M.P. 251 · Salta» y
+  las líneas legales dicen «Grupo LPZ-Molins · Corredor matriculado Luis López · CUCIS M.P. 251»,
+  con espacios duros para que el nombre y la matrícula no se separen al cortar el renglón. **En el
+  portal de Fran sigue «CUCIS 251»**, como lo pidió Fran.
 - En el CRM es administrador, con las carteras Aires, propia, alquileres y `alquileres-luis` (la
   planilla de sus alquileres). **No tiene La Torre.** Al 15/9 todavía no se le había entregado el
   acceso.
@@ -72,8 +77,9 @@ David: que se parezcan pero no sean iguales, para que no se confunda la gente ni
   (`pestanasBusca` en `app.js`), como Noman, NMS, Carina Nuñez o Compass. Reemplazan el desplegable
   de operación, que queda oculto. Botón «Buscar» rectangular y carbón. Pegado bajo la barra, las
   pestañas se apagan y el `top` resta `--pest-h`: esconderlas cambiando el alto haría saltar la página.
-- **Texto de la portada**: «Tu próxima propiedad en Salta» y «Casas, terrenos y alquileres ·
-  Corredor matriculado CUCIS 251» (en el celular, en dos líneas sin el punto). Los botones son menos
+- **Texto de la portada**: «Tu próxima propiedad en Salta» y «Casas, terrenos y alquileres». La
+  matrícula salió del subtítulo el 18/9 porque ya está en la marca, en la misma pantalla (y por lo
+  mismo el pie del menú del celular dice sólo la dirección y «Grupo LPZ-Molins»). Los botones son menos
   redondeados que las píldoras de Fran, y el de la barra dice «Buscar propiedades».
 - **Cierre naranja** (16/9): «¿Buscás algo que no está publicado?» en un bloque naranja de la marca
   con texto carbón, botones «Hacer una consulta» (carbón) y «Escribir por WhatsApp» (blanco). En el
@@ -92,7 +98,7 @@ Lo que sigue igual a propósito:
 
 - **La oficina, 20 de Febrero 1705, Of. 7.** En los documentos del proyecto figura como la de
   Grupo LPZ-Molins. Confirmar con Luis.
-- **La matrícula**: «Grupo LPZ-Molins · CUCIS 251 · Corredor matriculado Luis López».
+- **La matrícula**: «Grupo LPZ-Molins · Corredor matriculado Luis López · CUCIS M.P. 251» (18/9).
 - **Las carteras que se publican** (`propia,alquileres`): son las mismas propiedades que en el de Fran.
 
 ## Lo que falta
